@@ -17,6 +17,7 @@ tag(){
 
 push(){
   echo "* <!-- Start to push"
+  docker login
   docker push ${targetImage}
   echo "* Finish to push -->"
 }

@@ -11,7 +11,7 @@ tag(){
   echo "* <!-- Start to tag"
   echo $tag
   docker tag $sourceImage ${targetImage}:$tag
-  docker images
+  docker images | head -10 
   echo "* Finish tag -->"
 }
 
@@ -23,7 +23,7 @@ push(){
 }
 
 build(){
-  docker-compose  -f build.yml build --no-cache
+  docker-compose -f build.yml build --no-cache
 }
 
 case "$1" in
